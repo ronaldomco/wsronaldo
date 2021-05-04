@@ -1,0 +1,22 @@
+package variaveis;
+
+public class TiposDados {
+
+	public static void main(String[] args) {
+		String nome = "Ronaldo Oliveira";
+		int idade = 45;
+		double altura = 1.74;
+		double peso = 99;
+		double imc = peso / (altura * altura);
+		System.out.println("Nome..: " + nome);
+		System.out.println("Idade.: " + idade);
+		System.out.println("Altura: " + altura);
+		System.out.println("IMC:..: " + ims);
+
+
+
+
+
+	}
+
+}

@@ -1,0 +1,12 @@
+package variaveis;
+
+public class ManipulaString {
+	
+	public static void main(String[] args) {
+		
+		String email = "RonaldoMCO@yahoo.COM.Br";
+		System.out.println("Original: " + email);
+		
+	}
+
+}

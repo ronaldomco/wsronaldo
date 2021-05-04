@@ -1,0 +1,22 @@
+package variaveis;
+
+public class TiposDadosDesafio {
+	
+	public static void main(String[] args) {
+		/* 
+		 * Capturem: o nome de um produto, o valor de compra, e a quantidade.
+		 * Sobre o valor de compra xonsiderem um lucro de 20% para obterem o valor de venda
+		 * Calcule o total considerando o valor de venda e quantidade
+		 * Sobre o total acima calcule 22% de impostos
+		 * No final exibir:
+		 * O nome do produto
+		 * O valor de venda
+		 * O Total sem impostos
+		 */
+		
+		
+		
+		
+	}
+
+}

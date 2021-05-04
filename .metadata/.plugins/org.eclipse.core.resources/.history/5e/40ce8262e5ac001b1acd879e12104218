@@ -1,0 +1,15 @@
+package decisao;
+
+public class DesafioDecisaoSimples {
+
+	public static void main(String[] args) {
+	/*
+	 * Pedir: Nome e Idade
+	 * De acoerdo com as regras paa votação no Brasil
+	 * oriente o usuário se ele pode votar, se ele não pode votar ou se o voto dele é facultativo
+	 */
+
+		
+	}
+
+}
