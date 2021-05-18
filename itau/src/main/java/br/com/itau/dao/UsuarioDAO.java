@@ -11,6 +11,8 @@ import br.com.itau.modelo.Usuario;
  */
 
 public interface UsuarioDAO extends CrudRepository<Usuario, Integer>{
+	
+	public Usuario findByEmailAndSenha(String email, String senha);
 /*
  * CrudRepository será a classe pai do UsuarioDAO e está infirmando ao Sprong que esta
  * classe armazenará o CRUD para o usuário. 
@@ -29,7 +31,7 @@ public interface UsuarioDAO extends CrudRepository<Usuario, Integer>{
  */
 
 
-	
+
 	
 	
 
