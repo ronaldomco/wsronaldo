@@ -1,11 +1,17 @@
 package br.com.itau.modelo;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity  					// <-- fala para o SpringBoot que esta classe possui uma tabela no BD
 @Table(name="TB_ARTISTA")   // <-- identifica qual é a tabela que estará associada com a classe Usuario
@@ -24,6 +30,10 @@ public class Artista {
 	
 	@Column(name="estilo", length=30)
 	private String estilo;
+	
+	@OneToMany(mappedBy="artista", cascade=CascadeType.ALL)
+	@JsonIgnoreProperties("artista")
+	private List<Musica> musicas;
 
 	public int getId() {
 		return id;
@@ -57,12 +67,21 @@ public class Artista {
 		this.estilo = estilo;
 	}
 
-	public Artista(int id, String nomeartistico, String nacionalidade, String estilo) {
+	public List<Musica> getMusicas() {
+		return musicas;
+	}
+
+	public void setMusicas(List<Musica> musicas) {
+		this.musicas = musicas;
+	}
+
+	public Artista(int id, String nomeartistico, String nacionalidade, String estilo, List<Musica> musicas) {
 		super();
 		this.id = id;
 		this.nomeartistico = nomeartistico;
 		this.nacionalidade = nacionalidade;
 		this.estilo = estilo;
+		this.musicas = musicas;
 	}
 
 	public Artista() {
@@ -72,12 +91,12 @@ public class Artista {
 	@Override
 	public String toString() {
 		return "Artista [id=" + id + ", nomeartistico=" + nomeartistico + ", nacionalidade=" + nacionalidade
-				+ ", estilo=" + estilo + "]";
+				+ ", estilo=" + estilo + ", musicas=" + musicas + "]";
 	}
 	
 	
 	
+}
 	
 	
 
-}
