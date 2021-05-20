@@ -42,7 +42,7 @@ public class Transaction {
     private int status;
 		
 	@ManyToOne
-	@JsonIgnoreProperties("id_agente")
+	@JsonIgnoreProperties("transacoes")
 	private AgFinanceiro agfinanceiro;
 
 	public int getId_transacao() {

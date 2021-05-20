@@ -28,8 +28,8 @@ public class AgFinanceiro {
 	@Column(name="volume_transacional")
 	private float volume_transacional;
 
-	@OneToMany(mappedBy="id_transacao", cascade=CascadeType.ALL)
-	@JsonIgnoreProperties("id_transacao")
+	@OneToMany(mappedBy="agfinanceiro", cascade=CascadeType.ALL)
+	@JsonIgnoreProperties("agfinanceiro")
 	private List<Transaction> transacoes;
 
 	public int getId_agente() {
