@@ -1,5 +1,7 @@
 package br.com.dashcardsystem.modelo;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -19,8 +24,10 @@ public class Transaction {
 	@Column(name="id_transacao")
 	private int id_transacao;
 	
+	@Temporal(TemporalType.DATE)
+	@JsonFormat(pattern="dd/MM/yyyy", shape=JsonFormat.Shape.STRING)
 	@Column(name="data_hora")
-    private String data_hora;
+    private Date data_hora;
 	
 	@Column(name="dispositivo")
     private int dispositivo;
@@ -46,11 +53,11 @@ public class Transaction {
 		this.id_transacao = id_transacao;
 	}
 
-	public String getData_hora() {
+	public Date getData_hora() {
 		return data_hora;
 	}
 
-	public void setData_hora(String data_hora) {
+	public void setData_hora(Date data_hora) {
 		this.data_hora = data_hora;
 	}
 
@@ -94,7 +101,7 @@ public class Transaction {
 		this.agfinanceiro = agfinanceiro;
 	}
 
-	public Transaction(int id_transacao, String data_hora, int dispositivo, float valor_solic, float valor_aut,
+	public Transaction(int id_transacao, Date data_hora, int dispositivo, float valor_solic, float valor_aut,
 			int status, AgFinanceiro agfinanceiro) {
 		super();
 		this.id_transacao = id_transacao;
@@ -116,13 +123,8 @@ public class Transaction {
 				+ ", valor_solic=" + valor_solic + ", valor_aut=" + valor_aut + ", status=" + status + ", agfinanceiro="
 				+ agfinanceiro + "]";
 	}
-	
-	
 
 
-	
-	
-	
 	
 	
 
