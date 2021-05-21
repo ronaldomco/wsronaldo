@@ -56,4 +56,14 @@ public class AgFinanceiroController {
 		return ResponseEntity.ok(lista);
 	}
 
+	
+	@GetMapping("/agentefinanceirostop10")
+	public ResponseEntity<List<AgFinanceiro>> getAlltop10(){
+		List<AgFinanceiro> lista = (List<AgFinanceiro>) dao.findAll();
+		if (lista.size()==0) {
+			return ResponseEntity.status(404).build();
+		}
+		return ResponseEntity.ok(lista);
+	}
+	
 }
